@@ -1,0 +1,18 @@
+7cade7ccb50358f21a06d57553d153f6
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+exports["default"] = replacePathSepForGlob;
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+function replacePathSepForGlob(path) {
+  return path.replace(/\\(?![{}()+?.^$])/g, '/');
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJPYmplY3QiLCJkZWZpbmVQcm9wZXJ0eSIsImV4cG9ydHMiLCJ2YWx1ZSIsInJlcGxhY2VQYXRoU2VwRm9yR2xvYiIsInBhdGgiLCJyZXBsYWNlIl0sInNvdXJjZXMiOlsicmVwbGFjZVBhdGhTZXBGb3JHbG9iLmpzIl0sInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcblxuT2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsICdfX2VzTW9kdWxlJywge1xuICB2YWx1ZTogdHJ1ZVxufSk7XG5leHBvcnRzLmRlZmF1bHQgPSByZXBsYWNlUGF0aFNlcEZvckdsb2I7XG5cbi8qKlxuICogQ29weXJpZ2h0IChjKSBGYWNlYm9vaywgSW5jLiBhbmQgaXRzIGFmZmlsaWF0ZXMuIEFsbCBSaWdodHMgUmVzZXJ2ZWQuXG4gKlxuICogVGhpcyBzb3VyY2UgY29kZSBpcyBsaWNlbnNlZCB1bmRlciB0aGUgTUlUIGxpY2Vuc2UgZm91bmQgaW4gdGhlXG4gKiBMSUNFTlNFIGZpbGUgaW4gdGhlIHJvb3QgZGlyZWN0b3J5IG9mIHRoaXMgc291cmNlIHRyZWUuXG4gKi9cbmZ1bmN0aW9uIHJlcGxhY2VQYXRoU2VwRm9yR2xvYihwYXRoKSB7XG4gIHJldHVybiBwYXRoLnJlcGxhY2UoL1xcXFwoPyFbe30oKSs/Ll4kXSkvZywgJy8nKTtcbn1cbiJdLCJtYXBwaW5ncyI6IkFBQUEsWUFBWTs7QUFFWkEsTUFBTSxDQUFDQyxjQUFjLENBQUNDLE9BQU8sRUFBRSxZQUFZLEVBQUU7RUFDM0NDLEtBQUssRUFBRTtBQUNULENBQUMsQ0FBQztBQUNGRCxPQUFPLFdBQVEsR0FBR0UscUJBQXFCOztBQUV2QztBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSxTQUFTQSxxQkFBcUJBLENBQUNDLElBQUksRUFBRTtFQUNuQyxPQUFPQSxJQUFJLENBQUNDLE9BQU8sQ0FBQyxvQkFBb0IsRUFBRSxHQUFHLENBQUM7QUFDaEQiLCJpZ25vcmVMaXN0IjpbXX0=

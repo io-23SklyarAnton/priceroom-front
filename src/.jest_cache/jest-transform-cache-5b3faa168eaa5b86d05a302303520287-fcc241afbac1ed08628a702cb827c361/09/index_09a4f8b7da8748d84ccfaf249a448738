@@ -1,0 +1,20 @@
+87caa86da71dc0944cb963c93d0e4563
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _URLSearchParams = _interopRequireDefault(require("./classes/URLSearchParams.js"));
+var _FormData = _interopRequireDefault(require("./classes/FormData.js"));
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+var _default = exports["default"] = {
+  isNode: true,
+  classes: {
+    URLSearchParams: _URLSearchParams["default"],
+    FormData: _FormData["default"],
+    Blob: typeof Blob !== 'undefined' && Blob || null
+  },
+  protocols: ['http', 'https', 'file', 'data']
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJfVVJMU2VhcmNoUGFyYW1zIiwiX2ludGVyb3BSZXF1aXJlRGVmYXVsdCIsInJlcXVpcmUiLCJfRm9ybURhdGEiLCJlIiwiX19lc01vZHVsZSIsIl9kZWZhdWx0IiwiZXhwb3J0cyIsImlzTm9kZSIsImNsYXNzZXMiLCJVUkxTZWFyY2hQYXJhbXMiLCJGb3JtRGF0YSIsIkJsb2IiLCJwcm90b2NvbHMiXSwic291cmNlcyI6WyJpbmRleC5qcyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgVVJMU2VhcmNoUGFyYW1zIGZyb20gJy4vY2xhc3Nlcy9VUkxTZWFyY2hQYXJhbXMuanMnXG5pbXBvcnQgRm9ybURhdGEgZnJvbSAnLi9jbGFzc2VzL0Zvcm1EYXRhLmpzJ1xuXG5leHBvcnQgZGVmYXVsdCB7XG4gIGlzTm9kZTogdHJ1ZSxcbiAgY2xhc3Nlczoge1xuICAgIFVSTFNlYXJjaFBhcmFtcyxcbiAgICBGb3JtRGF0YSxcbiAgICBCbG9iOiB0eXBlb2YgQmxvYiAhPT0gJ3VuZGVmaW5lZCcgJiYgQmxvYiB8fCBudWxsXG4gIH0sXG4gIHByb3RvY29sczogWyAnaHR0cCcsICdodHRwcycsICdmaWxlJywgJ2RhdGEnIF1cbn07XG4iXSwibWFwcGluZ3MiOiI7Ozs7OztBQUFBLElBQUFBLGdCQUFBLEdBQUFDLHNCQUFBLENBQUFDLE9BQUE7QUFDQSxJQUFBQyxTQUFBLEdBQUFGLHNCQUFBLENBQUFDLE9BQUE7QUFBNEMsU0FBQUQsdUJBQUFHLENBQUEsV0FBQUEsQ0FBQSxJQUFBQSxDQUFBLENBQUFDLFVBQUEsR0FBQUQsQ0FBQSxnQkFBQUEsQ0FBQTtBQUFBLElBQUFFLFFBQUEsR0FBQUMsT0FBQSxjQUU3QjtFQUNiQyxNQUFNLEVBQUUsSUFBSTtFQUNaQyxPQUFPLEVBQUU7SUFDUEMsZUFBZSxFQUFmQSwyQkFBZTtJQUNmQyxRQUFRLEVBQVJBLG9CQUFRO0lBQ1JDLElBQUksRUFBRSxPQUFPQSxJQUFJLEtBQUssV0FBVyxJQUFJQSxJQUFJLElBQUk7RUFDL0MsQ0FBQztFQUNEQyxTQUFTLEVBQUUsQ0FBRSxNQUFNLEVBQUUsT0FBTyxFQUFFLE1BQU0sRUFBRSxNQUFNO0FBQzlDLENBQUMiLCJpZ25vcmVMaXN0IjpbXX0=

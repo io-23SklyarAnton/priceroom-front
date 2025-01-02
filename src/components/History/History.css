@@ -1,0 +1,107 @@
+.history-container {
+    padding: 40px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+    border-radius: 12px;
+    margin: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.history-header {
+    display: flex;
+    align-items: center;
+    background-color: #e0e0e0; 
+    padding: 10px 20px;
+    border-radius: 12px 12px 0 0; 
+    margin-bottom: 20px;
+}
+
+.history-icon {
+    width: 30px; 
+    height: 30px;
+    margin-right: 1px;
+}
+
+.history-container h2 {
+    font-size: 2rem;
+    color: #333;
+    margin: 0;
+    text-align: left;
+}
+
+.history-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px;
+}
+
+.history-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.history-card-header {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.history-card-content {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+}
+
+.history-card-content li {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+.history-card-content li strong {
+    font-weight: bold;
+}
+
+
+
+.pagination-button.active {
+    background-color: #007bff;
+    transform: scale(1.1);
+}
+
+.pagination-button:hover {
+    background-color: #007bffac;;
+    transform: scale(1.1);
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 15px; 
+}
+
+.pagination-button {
+    width: 40px;
+    height: 40px;
+    background-color: #8a8a8a;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.pagination-button:not(:last-child) {
+    margin-right: 10px; 
+}

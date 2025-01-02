@@ -1,0 +1,107 @@
+.menu {
+    background-color: #333; 
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.menu-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.menu-logo h1 {
+    margin: 0;
+    font-size: 24px;
+    color: white;
+}
+
+.menu-logo a {
+    text-decoration: none; 
+    color: white; 
+}
+
+.menu-logo a h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.menu-items {
+    list-style: none;
+    display: flex; 
+    margin: 0;
+    padding: 0;
+}
+
+.menu-items li {
+    margin-left: 20px; 
+    display: flex;
+    align-items: center; 
+}
+
+.menu-items a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease; 
+}
+
+.menu-items a:hover {
+    color: #007BFF; 
+}
+
+
+.logout-btn {
+    background-color: #ff4d4d; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    cursor: pointer;
+    border-radius: 5px; 
+    transition: background-color 0.3s ease;
+    display: inline-block; 
+}
+
+.logout-btn:hover {
+    background-color: #ff1a1a; 
+}
+
+.logout-btn:focus {
+    outline: none; 
+}
+.history-btn {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;  
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.history-icon {
+    width: 20px; 
+    height: 20px;
+    margin-right: 8px;  
+}
+
+.history-text {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease; 
+}
+
+.history-btn:hover .history-icon {
+    opacity: 0.8; 
+}
+
+.history-btn:hover .history-text {
+    color: #bdbdbd;  
+}
+

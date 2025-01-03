@@ -1,0 +1,13 @@
+2290d84d7cd85669adbb1cab1a09c1e7
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = bind;
+function bind(fn, thisArg) {
+  return function wrap() {
+    return fn.apply(thisArg, arguments);
+  };
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJPYmplY3QiLCJkZWZpbmVQcm9wZXJ0eSIsImV4cG9ydHMiLCJ2YWx1ZSIsImJpbmQiLCJmbiIsInRoaXNBcmciLCJ3cmFwIiwiYXBwbHkiLCJhcmd1bWVudHMiXSwic291cmNlcyI6WyJiaW5kLmpzIl0sInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcblxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gYmluZChmbiwgdGhpc0FyZykge1xuICByZXR1cm4gZnVuY3Rpb24gd3JhcCgpIHtcbiAgICByZXR1cm4gZm4uYXBwbHkodGhpc0FyZywgYXJndW1lbnRzKTtcbiAgfTtcbn1cbiJdLCJtYXBwaW5ncyI6IkFBQUEsWUFBWTs7QUFBQ0EsTUFBQSxDQUFBQyxjQUFBLENBQUFDLE9BQUE7RUFBQUMsS0FBQTtBQUFBO0FBQUFELE9BQUEsY0FBQUUsSUFBQTtBQUVFLFNBQVNBLElBQUlBLENBQUNDLEVBQUUsRUFBRUMsT0FBTyxFQUFFO0VBQ3hDLE9BQU8sU0FBU0MsSUFBSUEsQ0FBQSxFQUFHO0lBQ3JCLE9BQU9GLEVBQUUsQ0FBQ0csS0FBSyxDQUFDRixPQUFPLEVBQUVHLFNBQVMsQ0FBQztFQUNyQyxDQUFDO0FBQ0giLCJpZ25vcmVMaXN0IjpbXX0=

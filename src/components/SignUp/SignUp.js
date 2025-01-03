@@ -1,22 +1,22 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import "./SignUp.css";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import './SignUp.css';
 
 const SignUp = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
     // Перевірка наявності токена в localStorage
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem('token');
     if (token) {
       // Якщо токен є, перенаправляємо на домашню сторінку або профіль
-      navigate("/");
+      navigate('/');
     }
   }, [navigate]);
 
@@ -25,42 +25,42 @@ const SignUp = () => {
   };
 
   const handleSignUp = async () => {
-    setErrorMessage("");
-    setSuccessMessage("");
+    setErrorMessage('');
+    setSuccessMessage('');
 
     if (password !== confirmPassword) {
-      setErrorMessage("Паролі не є однаковими.");
+      setErrorMessage('Паролі не є однаковими.');
       return;
     }
 
     if (!validatePassword()) {
-      setErrorMessage("Пароль має бути довжиною мінімум у 8 символів.");
+      setErrorMessage('Пароль має бути довжиною мінімум у 8 символів.');
       return;
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/signup", {
+      const response = await axios.post('http://localhost:5000/signup', {
         username,
         password,
       });
 
       if (response.data.success) {
-        setSuccessMessage("Користувача було створено!");
-        setUsername("");
-        setPassword("");
-        setConfirmPassword("");
+        setSuccessMessage('Користувача було створено!');
+        setUsername('');
+        setPassword('');
+        setConfirmPassword('');
       } else {
         setErrorMessage(
-          response.data.message || "Виникла помилка, повторіть спробу.",
+          response.data.message || 'Виникла помилка, повторіть спробу.',
         );
       }
     } catch (error) {
       if (error.response && error.response.data) {
         setErrorMessage(
-          error.response.data.message || "Виникла помилка, повторіть спробу.",
+          error.response.data.message || 'Виникла помилка, повторіть спробу.',
         );
       } else {
-        setErrorMessage("Виникла помилка, повторіть спробу.");
+        setErrorMessage('Виникла помилка, повторіть спробу.');
       }
       console.error(error);
     }

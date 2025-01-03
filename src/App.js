@@ -1,11 +1,11 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Auth from "./components/Auth/Auth";
-import DataInput from "./components/DataInput/DataInput";
-import History from "./components/History/History";
-import SignUp from "./components/SignUp/SignUp";
-import Menu from "./components/Menu/Menu";
-import "./App.css";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Auth from './components/Auth/Auth';
+import DataInput from './components/DataInput/DataInput';
+import History from './components/History/History';
+import SignUp from './components/SignUp/SignUp';
+import Menu from './components/Menu/Menu';
+import './App.css';
 
 const NotFound = () => {
   return (

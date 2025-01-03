@@ -1,36 +1,36 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import useAuth from "../../hooks/useAuth";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
-import "./DataInput.css";
+import './DataInput.css';
 
 const DataInput = () => {
   useAuth();
 
   const [formData, setFormData] = useState({
-    district: "",
-    floor: "",
-    floors_count: "",
-    rooms_count: "",
-    total_square_meters: "",
+    district: '',
+    floor: '',
+    floors_count: '',
+    rooms_count: '',
+    total_square_meters: '',
   });
   const [price, setPrice] = useState(null);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState('');
   const [formErrors, setFormErrors] = useState({
-    district: "",
-    floor: "",
-    floors_count: "",
-    rooms_count: "",
-    total_square_meters: "",
+    district: '',
+    floor: '',
+    floors_count: '',
+    rooms_count: '',
+    total_square_meters: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem('token');
     if (!token) {
-      navigate("/auth");
+      navigate('/auth');
     }
   }, [navigate]);
 
@@ -49,30 +49,30 @@ const DataInput = () => {
   };
 
   const validateField = (fieldName, value) => {
-    if (fieldName === "district" && !value) {
+    if (fieldName === 'district' && !value) {
       return "Це поле обов'язкове";
     }
-    if (fieldName === "floor" && (value < 1 || value > 100)) {
-      return "Поверх має бути в межах від 1 до 100";
+    if (fieldName === 'floor' && (value < 1 || value > 100)) {
+      return 'Поверх має бути в межах від 1 до 100';
     }
-    if (fieldName === "floors_count" && (value < 1 || value > 100)) {
-      return "Загальна кількість поверхів має бути в межах від 1 до 100";
+    if (fieldName === 'floors_count' && (value < 1 || value > 100)) {
+      return 'Загальна кількість поверхів має бути в межах від 1 до 100';
     }
-    if (fieldName === "rooms_count" && (value < 1 || value > 10)) {
-      return "Кількість кімнат має бути в межах від 1 до 10";
+    if (fieldName === 'rooms_count' && (value < 1 || value > 10)) {
+      return 'Кількість кімнат має бути в межах від 1 до 10';
     }
-    if (fieldName === "total_square_meters" && (value < 1 || value > 1000)) {
-      return "Площа має бути в межах від 1 до 1000 м²";
+    if (fieldName === 'total_square_meters' && (value < 1 || value > 1000)) {
+      return 'Площа має бути в межах від 1 до 1000 м²';
     }
-    return "";
+    return '';
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem('token');
 
     if (!token) {
-      navigate("/auth");
+      navigate('/auth');
       return;
     }
 
@@ -85,7 +85,7 @@ const DataInput = () => {
     setFormErrors(errors);
 
     if (Object.keys(errors).length > 0) {
-      setErrorMessage("Будь ласка, виправте помилки у формі.");
+      setErrorMessage('Будь ласка, виправте помилки у формі.');
       return;
     }
 
@@ -93,27 +93,27 @@ const DataInput = () => {
 
     try {
       const response = await axios.post(
-        "http://98.83.92.105:8000/api/predict-price/",
+        'http://98.83.92.105:8000/api/predict-price/',
         formData,
         {
           headers: {
             Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
           },
         },
       );
 
       setPrice(response.data.price);
-      setErrorMessage("");
+      setErrorMessage('');
 
       await axios.post(
-        "http://localhost:5000/",
+        'http://localhost:5000/',
         { ...formData, predict_price: response.data.price },
         { headers: { Authorization: `Bearer ${token}` } },
       );
     } catch (error) {
-      console.error("Error:", error);
-      setErrorMessage("Не вдалося отримати прогноз ціни або зберегти дані.");
+      console.error('Error:', error);
+      setErrorMessage('Не вдалося отримати прогноз ціни або зберегти дані.');
     } finally {
       setIsSubmitting(false);
     }
@@ -129,21 +129,21 @@ const DataInput = () => {
             name="district"
             value={formData.district}
             onChange={handleInputChange}
-            className={formErrors.district ? "input-error" : ""}
+            className={formErrors.district ? 'input-error' : ''}
             disabled={isSubmitting}
           >
             <option value="">Оберіть район</option>
             {[
-              "Деснянський",
-              "Святошинський",
-              "Дніпровський",
-              "Печерський",
-              "Голосіївський",
-              "Дарницький",
-              "Солом’янський",
-              "Оболонський",
-              "Шевченківський",
-              "Подільський",
+              'Деснянський',
+              'Святошинський',
+              'Дніпровський',
+              'Печерський',
+              'Голосіївський',
+              'Дарницький',
+              'Солом’янський',
+              'Оболонський',
+              'Шевченківський',
+              'Подільський',
             ].map((district) => (
               <option key={district} value={district}>
                 {district}
@@ -163,7 +163,7 @@ const DataInput = () => {
             onChange={handleInputChange}
             min="1"
             max="100"
-            className={formErrors.floor ? "input-error" : ""}
+            className={formErrors.floor ? 'input-error' : ''}
             disabled={isSubmitting}
           />
           {formErrors.floor && (
@@ -179,7 +179,7 @@ const DataInput = () => {
             onChange={handleInputChange}
             min="1"
             max="100"
-            className={formErrors.floors_count ? "input-error" : ""}
+            className={formErrors.floors_count ? 'input-error' : ''}
             disabled={isSubmitting}
           />
           {formErrors.floors_count && (
@@ -195,7 +195,7 @@ const DataInput = () => {
             onChange={handleInputChange}
             min="1"
             max="10"
-            className={formErrors.rooms_count ? "input-error" : ""}
+            className={formErrors.rooms_count ? 'input-error' : ''}
             disabled={isSubmitting}
           />
           {formErrors.rooms_count && (
@@ -209,7 +209,7 @@ const DataInput = () => {
             name="total_square_meters"
             value={formData.total_square_meters}
             onChange={handleInputChange}
-            className={formErrors.total_square_meters ? "input-error" : ""}
+            className={formErrors.total_square_meters ? 'input-error' : ''}
             disabled={isSubmitting}
             pattern="^\d+(\.\d{1,2})?$"
           />

@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import useAuth from "../../hooks/useAuth";
-import "./History.css";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import useAuth from '../../hooks/useAuth';
+import './History.css';
 
 const History = () => {
   useAuth();
@@ -14,12 +14,12 @@ const History = () => {
   useEffect(() => {
     const fetchHistory = async () => {
       try {
-        const token = localStorage.getItem("token");
+        const token = localStorage.getItem('token');
         if (!token) {
-          throw new Error("No token found");
+          throw new Error('No token found');
         }
 
-        const response = await axios.get("http://localhost:5000/history", {
+        const response = await axios.get('http://localhost:5000/history', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -29,7 +29,7 @@ const History = () => {
         setHistoryData(history);
         setTotalPages(Math.ceil(history.length / itemsPerPage));
       } catch (error) {
-        console.error("Error fetching history:", error);
+        console.error('Error fetching history:', error);
       }
     };
 
@@ -38,12 +38,12 @@ const History = () => {
 
   const formatDateTime = (datetime) => {
     const date = new Date(datetime);
-    return date.toLocaleString("uk-UA", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
+    return date.toLocaleString('uk-UA', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
     });
   };
 
@@ -66,7 +66,7 @@ const History = () => {
       pageNumbers.push(1);
 
       if (currentPage > 2) {
-        pageNumbers.push("•••");
+        pageNumbers.push('•••');
       }
 
       const start = Math.max(2, currentPage - 1);
@@ -77,7 +77,7 @@ const History = () => {
       }
 
       if (currentPage < totalPages - 1) {
-        pageNumbers.push("•••");
+        pageNumbers.push('•••');
       }
 
       pageNumbers.push(totalPages);
@@ -87,9 +87,9 @@ const History = () => {
   };
 
   const handleEllipsisClick = (page) => {
-    if (page === "afterFirst") {
+    if (page === 'afterFirst') {
       setCurrentPage(2);
-    } else if (page === "beforeLast") {
+    } else if (page === 'beforeLast') {
       setCurrentPage(totalPages - 1);
     }
   };
@@ -117,14 +117,14 @@ const History = () => {
                 <strong>Поверх:</strong> {item.floor}
               </li>
               <li>
-                <strong>Загальна кількість поверхів:</strong>{" "}
+                <strong>Загальна кількість поверхів:</strong>{' '}
                 {item.floors_count}
               </li>
               <li>
                 <strong>Кількість кімнат:</strong> {item.rooms_count}
               </li>
               <li>
-                <strong>Загальна площа квартири (м²):</strong>{" "}
+                <strong>Загальна площа квартири (м²):</strong>{' '}
                 {item.total_square_meters}
               </li>
               <li>
@@ -138,28 +138,28 @@ const History = () => {
         {generatePageNumbers().map((page, index) => (
           <button
             key={index}
-            className={`pagination-button ${currentPage === page ? "active" : ""}`}
+            className={`pagination-button ${currentPage === page ? 'active' : ''}`}
             onClick={() => {
-              if (page !== "•••") {
+              if (page !== '•••') {
                 handlePageChange(page);
               }
             }}
           >
-            {page === "•••" ? (
+            {page === '•••' ? (
               <span
                 onClick={() => {
                   const pageNumbers = generatePageNumbers();
-                  if (pageNumbers.indexOf("•••") === 1) {
-                    handleEllipsisClick("afterFirst");
+                  if (pageNumbers.indexOf('•••') === 1) {
+                    handleEllipsisClick('afterFirst');
                   } else if (
-                    pageNumbers.indexOf("•••") ===
+                    pageNumbers.indexOf('•••') ===
                     pageNumbers.length - 2
                   ) {
-                    handleEllipsisClick("beforeLast");
+                    handleEllipsisClick('beforeLast');
                   }
                 }}
               >
-                {"•••"}
+                {'•••'}
               </span>
             ) : (
               page

@@ -1,18 +1,14 @@
 module.exports = {
-  rootDir: './',   
+  rootDir: './',
   testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[tj]s?(x)'],
   moduleNameMapper: {
-    "^react-router-dom$": "<rootDir>/node_modules/react-router-dom",
+    '^react-router-dom$': '<rootDir>/node_modules/react-router-dom',
   },
-  testEnvironment: "jsdom",
+  testEnvironment: 'jsdom',
   transform: {
-    "^.+\\.(js|jsx|ts|tsx)$": "babel-jest",
+    '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
   },
-  transformIgnorePatterns: [
-    "/node_modules/(?!react-router-dom)/",
-  ],
-
-  
+  transformIgnorePatterns: ['/node_modules/(?!react-router-dom)/'],
 
   cacheDirectory: './.jest_cache',
 

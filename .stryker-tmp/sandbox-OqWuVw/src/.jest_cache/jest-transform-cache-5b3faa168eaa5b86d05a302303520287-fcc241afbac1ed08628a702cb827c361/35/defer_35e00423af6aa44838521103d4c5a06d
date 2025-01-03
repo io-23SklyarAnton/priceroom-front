@@ -1,0 +1,20 @@
+53ac669f618daaa466bb770f04148f55
+"use strict";
+
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+module.exports = defer;
+
+/**
+ * Runs provided function on next iteration of the event loop
+ *
+ * @param {function} fn - function to run
+ */
+function defer(fn) {
+  var nextTick = typeof setImmediate == 'function' ? setImmediate : (typeof process === "undefined" ? "undefined" : _typeof(process)) == 'object' && typeof process.nextTick == 'function' ? process.nextTick : null;
+  if (nextTick) {
+    nextTick(fn);
+  } else {
+    setTimeout(fn, 0);
+  }
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJtb2R1bGUiLCJleHBvcnRzIiwiZGVmZXIiLCJmbiIsIm5leHRUaWNrIiwic2V0SW1tZWRpYXRlIiwicHJvY2VzcyIsIl90eXBlb2YiLCJzZXRUaW1lb3V0Il0sInNvdXJjZXMiOlsiZGVmZXIuanMiXSwic291cmNlc0NvbnRlbnQiOlsibW9kdWxlLmV4cG9ydHMgPSBkZWZlcjtcblxuLyoqXG4gKiBSdW5zIHByb3ZpZGVkIGZ1bmN0aW9uIG9uIG5leHQgaXRlcmF0aW9uIG9mIHRoZSBldmVudCBsb29wXG4gKlxuICogQHBhcmFtIHtmdW5jdGlvbn0gZm4gLSBmdW5jdGlvbiB0byBydW5cbiAqL1xuZnVuY3Rpb24gZGVmZXIoZm4pXG57XG4gIHZhciBuZXh0VGljayA9IHR5cGVvZiBzZXRJbW1lZGlhdGUgPT0gJ2Z1bmN0aW9uJ1xuICAgID8gc2V0SW1tZWRpYXRlXG4gICAgOiAoXG4gICAgICB0eXBlb2YgcHJvY2VzcyA9PSAnb2JqZWN0JyAmJiB0eXBlb2YgcHJvY2Vzcy5uZXh0VGljayA9PSAnZnVuY3Rpb24nXG4gICAgICA/IHByb2Nlc3MubmV4dFRpY2tcbiAgICAgIDogbnVsbFxuICAgICk7XG5cbiAgaWYgKG5leHRUaWNrKVxuICB7XG4gICAgbmV4dFRpY2soZm4pO1xuICB9XG4gIGVsc2VcbiAge1xuICAgIHNldFRpbWVvdXQoZm4sIDApO1xuICB9XG59XG4iXSwibWFwcGluZ3MiOiI7OztBQUFBQSxNQUFNLENBQUNDLE9BQU8sR0FBR0MsS0FBSzs7QUFFdEI7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBLFNBQVNBLEtBQUtBLENBQUNDLEVBQUUsRUFDakI7RUFDRSxJQUFJQyxRQUFRLEdBQUcsT0FBT0MsWUFBWSxJQUFJLFVBQVUsR0FDNUNBLFlBQVksR0FFWixRQUFPQyxPQUFPLGlDQUFBQyxPQUFBLENBQVBELE9BQU8sTUFBSSxRQUFRLElBQUksT0FBT0EsT0FBTyxDQUFDRixRQUFRLElBQUksVUFBVSxHQUNqRUUsT0FBTyxDQUFDRixRQUFRLEdBQ2hCLElBQ0g7RUFFSCxJQUFJQSxRQUFRLEVBQ1o7SUFDRUEsUUFBUSxDQUFDRCxFQUFFLENBQUM7RUFDZCxDQUFDLE1BRUQ7SUFDRUssVUFBVSxDQUFDTCxFQUFFLEVBQUUsQ0FBQyxDQUFDO0VBQ25CO0FBQ0YiLCJpZ25vcmVMaXN0IjpbXX0=

@@ -1,41 +1,41 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-import "./Auth.css";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import './Auth.css';
 
 const Auth = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem('token');
     if (token) {
-      navigate("/");
+      navigate('/');
     }
   }, [navigate]);
 
   const handleLogin = async () => {
-    setErrorMessage("");
-    setSuccessMessage("");
+    setErrorMessage('');
+    setSuccessMessage('');
 
     try {
-      const response = await axios.post("http://localhost:5000/auth/login", {
+      const response = await axios.post('http://localhost:5000/auth/login', {
         username,
         password,
       });
-      localStorage.setItem("token", response.data.token);
+      localStorage.setItem('token', response.data.token);
 
       setIsAuthenticated(true);
-      navigate("/");
+      navigate('/');
     } catch (error) {
       setErrorMessage(
-        error.response?.data?.message || "Виникла помилка (бек підключи)",
+        error.response?.data?.message || 'Виникла помилка (бек підключи)',
       );
     }
   };
@@ -63,7 +63,7 @@ const Auth = () => {
             Увійти
           </button>
           <p className="auth-signup-text">
-            Ще немає аккаунту?{" "}
+            Ще немає аккаунту?{' '}
             <Link to="/signup" className="auth-link">
               Зареєструватись
             </Link>
